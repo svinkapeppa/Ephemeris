@@ -19,15 +19,43 @@ private:
   std::vector<double> times;
   std::vector<double> coefficients;
 
-  void SetTargetTime(std::vector<int> &targetSpec);
-  void SetTimes(std::vector<int> &timeSpec);
-  void StartUp();
-  void Preprocessing();
-  void ProcessFile();
-public:
-  void Greeting();
-  void Work();
+  std::vector<std::vector<double>> x;
+  std::vector<std::vector<double>> y;
+  std::vector<std::vector<double>> z;
 
+  std::vector<double> resX;
+  std::vector<double> resY;
+  std::vector<double> resZ;
+
+  void StartUp();
+
+  void Preprocessing();
+
+  void ProcessFile();
+
+  void Calculate();
+
+  void PrintResults();
+
+  void SetTargetTime(std::vector<int> &targetSpec);
+
+  void SetTimes(std::vector<int> &timeSpec);
+
+  void SetDataPath();
+
+  std::string GetSatelliteNumber(int number);
+
+  std::string GetDate(int i);
+
+  std::string GetStopDate();
+
+  double Sum(std::vector<double> &array);
+public:
+  CApp();
+
+  void Greeting();
+
+  void Work();
 };
 
 #endif //EPHEMERIS_EPHEMERISLIBRARY_H
